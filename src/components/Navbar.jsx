@@ -8,7 +8,7 @@ function Navbar() {
   const [usersTabOpen, setUsersTabOpen] = useState(false);
   const [reportsTabOpen, setReportsTabOpen] = useState(false);
   return (
-    <nav className="bg-linear-to-bl from-purple-500 to-purple-800 text-white w-48 min-h-screen p-4 flex flex-col justify-between">
+    <nav className="fixed h-screen top-0 left-0 w-48 bg-linear-to-bl from-purple-500 to-purple-800 text-white w-48 min-h-screen p-4 flex flex-col justify-between">
       <div>
         <div className="mb-6 flex items-center justify-center"><img src={react_logo} alt="Logomarca da empresa" className="w-20 h-30" /></div>
         <ul className="space-y-2 flex flex-col">

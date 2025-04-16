@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 function SummaryCard () {
   const [summary, setSummary] = useState({
@@ -20,7 +21,11 @@ function SummaryCard () {
   }, []);
 
   return (
-    <div className='bg-white shadow-md rounded-lg p-6 flex flex-col justify-center'>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }} 
+      className='bg-white shadow-md rounded-lg p-6 flex flex-col justify-center'>
       <h2 className='text-xl font-semibold text-gray-800 mb-4'>Resumo das últimas 24h</h2>
 
       <div className='space-y-3 h-full flex flex-col justify-center'>
@@ -37,7 +42,7 @@ function SummaryCard () {
           <span className='font-bold text-red-600'>{summary.deniedAttempts}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 function LastAlertsCard() {
   const [alerts, setAlerts] = useState([])
@@ -25,7 +26,11 @@ function LastAlertsCard() {
   }, [])
 
   return (
-    <div className='bg-white shadow-md rounded-lg p-6'>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }} 
+      className='bg-white shadow-md rounded-lg p-6'>
       <h2 className='text-xl font-semibold text-gray-800 mb-4'>Últimos Alertas</h2>
       <div className='flex flex-col justify-center'>
         <ul className='space-y-3 text-sm overflow-y-auto max-h-64 pr-2'>
@@ -40,7 +45,7 @@ function LastAlertsCard() {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

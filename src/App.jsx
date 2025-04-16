@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter basename={isProduction ? "/dashboard-access-control" : "/"}>
       <div className="flex">
         <Navbar />
-        <div className="flex-1 p-4">
+        <div className="pl-52 flex-1 p-4">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/users/regulars" element={<Regulars />} />
