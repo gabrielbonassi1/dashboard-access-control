@@ -1,12 +1,7 @@
-# React + Vite
+### Dashboard de controle de acesso
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### [Live demo](https://gabrielbonassi1.github.io/dashboard-access-control/)
 
-Currently, two official plugins are available:
+A ideia veio de uma empresa em que eu trabalhei, onde eu trabalhava no desenvolvimento de produtos de controle de acesso. Os equipamentos tinham uma interface web desenvolvida em HTML+CSS+JQuery, e sempre existiu um projeto de migrar para uma interface desenvolvida em React. Resolvi fazer um projeto pessoal com minhas ideias sobre o assunto.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<img src="./markdown_icons/react_logo.svg" width="50" height="50" alt="React"> <img src="./markdown_icons/vite_logo.svg" width="50" height="50" alt="Vite"> <img src="./markdown_icons/tailwind_logo.svg" width="50" height="50" alt="Tailwind CSS">

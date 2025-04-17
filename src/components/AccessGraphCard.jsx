@@ -41,7 +41,7 @@ function AccessGraphCard() {
       }
     }
   }
-
+  // precisa encaixar o Bar certinho no card
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
