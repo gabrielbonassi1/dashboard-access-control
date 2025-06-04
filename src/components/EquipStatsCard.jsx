@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { db } from '../firebaseConfig';
+import { collection, onSnapshot } from 'firebase/firestore';
 
 function EquipStatsCard() {
   const [equips, setEquips] = useState([])
 
   useEffect(() => {
-    const mockupData = [
-      {
-        name: 'Porta 1',
-        status: 'online',
-        lastSync: '16/04/2025 08:42'
-      },
-      {
-        name: 'Porta 2',
-        status: 'offline',
-        lastSync: '16/04/2025 06:10'
-      }
-    ]
+    const unsub = onSnapshot(collection(db, "devices"), (snapshot) => {
+      const devices = snapshot.docs.map(doc => doc.data());
+      setEquips(devices);
+    });
 
-    setTimeout(() => {
-      setEquips(mockupData)
-    }, 5000)
+    return () => unsub();
   }, [])
 
   return (
@@ -38,11 +30,11 @@ function EquipStatsCard() {
                 <p className='font-medium text-gray-700'>{equip.name}</p>
               </div>
               <span className={`text-xs font-semibold px-2 py-1 rounded-md ${
-                  equip.status === 'online'
+                  equip.status === 1
                     ? 'bg-green-100 text-green-700'
                     : 'bg-red-100 text-red-700'
                 }`}>
-                  {equip.status.toUpperCase()}
+                  {equip.status === 1 ? 'Online' : 'Offline'}
                 </span>
               <p className='text-gray-500 text-xs'>Última sincronização: {equip.lastSync}</p>
             </li>
